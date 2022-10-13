@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+//imprtamos las 
+import React , {useState,useEffect} from 'react'
 import './App.css';
+import getGifts from './getGifs';
+import Gift from './components/gitf'
+
+
 
 function App() {
+
+  const [gift,setGift] = useState([])
+  useEffect(()=> {
+   getGifts({keyword:'baby'}).then(gift => setGift(gift))
+  },[])
+  
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-container">
+      {
+      gift.map(setGift => <Gift title={setGift.title} url ={setGift.url} id ={setGift.id} />
+      )
+      }
+      <button onClick={()=>setGift() }>Cambiar Gift</button>
+      </section>
     </div>
   );
 }
