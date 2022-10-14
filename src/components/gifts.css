@@ -1,0 +1,23 @@
+.container-create-gift {
+    width: 270px;
+    height: 300px;
+    margin: 25px 0 0 20px;
+    border: 1px solid aqua;
+    padding: 9px;
+    color: aliceblue;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 9px aqua;
+}
+
+img {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+}
+
+small {
+    font-size: 15px;
+    cursor: pointer;
+}

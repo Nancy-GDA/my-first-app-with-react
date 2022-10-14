@@ -1,10 +1,12 @@
 import React from 'react'
+import '../components/gifts.css'
 
+//exportamos la estructura del componente react para ponerla en la app principal
 export default function Gift ({ title, id ,url }){
-    return  <div>
-    <h4>{title}</h4>
-    <p>{id}</p>
+    return  <a href={`#${id}`} className='container-create-gift'>
     <img src={url} alt={title} />
-  </div>
+    <h4>{title}</h4>
+    <small>{id}</small>
+  </a>
 
 }

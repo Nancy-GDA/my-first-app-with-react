@@ -1,29 +1,22 @@
-//imprtamos las 
-import React , {useState,useEffect} from 'react'
+//imprtamos los archivos donde tengo diferentes fracmentos de codigo que ayudan a la creacion de los componentes
+import React , { useState} from 'react'
 import './App.css';
-import getGifts from './getGifs';
-import Gift from './components/gitf'
+import ListOfGift from './components/listOfGift'
 
-
-
+//Funcion para crear la app en react
 function App() {
-
-  const [gift,setGift] = useState([])
-  useEffect(()=> {
-   getGifts({keyword:'baby'}).then(gift => setGift(gift))
-  },[])
-  
-  
+  //creamos un array con la keywordy el cambio que tendra la keyword y por defecto le pasamos al estado que busque babys bailando
+  const [keyword,setKeyword] = useState('babys-dance')
 
   return (
     <div className="App">
       <section className="App-container">
-      {
-      gift.map(setGift => <Gift title={setGift.title} url ={setGift.url} id ={setGift.id} />
-      )
-      }
-      <button onClick={()=>setGift() }>Cambiar Gift</button>
-      </section>
+        <ListOfGift keyword={ keyword }/>
+      </section> 
+        {/* cree un boton para que al darle click cambie de keyword y de estado por bebes perros */}
+        <div className='container-btn'>
+          <button onClick={()=>setKeyword ('dogs-puppies') } className='btn-gift'>Cambiar Gift</button> 
+        </div>
     </div>
   );
 }
