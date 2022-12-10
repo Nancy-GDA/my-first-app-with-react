@@ -1,0 +1,18 @@
+.gf-Fav {
+  background-color: #618ec3;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.gf-Fav:hover {
+  background: #582e85;
+}
+
+.gf-Fav span {
+  display: block;
+  width: 20px;
+}
